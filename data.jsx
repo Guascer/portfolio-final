@@ -1,0 +1,200 @@
+// Shared portfolio data for Oscar Frederiksen
+const PORTFOLIO = {
+  name: "Oscar Frederiksen",
+  role: "Interactive Media & Web Technologies",
+  location: "Växjö, Sweden",
+  university: "Linnaeus University",
+  email: "of222ha@student.lnu.se",
+  phone: "076 822 83 05",
+  tagline: "Designing interactive experiences where form meets function — always with the user at the center.",
+  about: "I'm a student at Linnaeus University in Växjö, studying Interactive Media and Web Technologies. I combine design and code — from Figma prototype to finished, responsive product. 3D is where I feel most at home: I model, rig, shade and animate in Blender, and bring those skills into the web through Three.js. I'm also deeply passionate about AI and where it's heading. I follow the space closely and see enormous potential in what it opens up for designers and developers — from generative tools to entirely new interaction paradigms. In a field moving this fast, staying curious isn't optional. I genuinely love new technology and the problems it lets us solve.",
+
+  focus: ["HTML / CSS / JS / Three.js", "Interaction Design", "UI / UX", "3D Development / Animation", "Emerging AI Tech"],
+  tools: ["VS Code", "Figma", "Photoshop", "Illustrator", "Blender", "Git"],
+
+  projects: [
+    {
+      id: "greenquest",
+      no: "01",
+      title: "GreenQuest",
+      sub: "Project Course 1",
+      year: "2025",
+      tag: "Web Service",
+      stack: ["HTML", "CSS", "JS", "API"],
+      color: "#2d6a3f",
+      img: "assets/proj-greenquest.png",
+      video: "assets/proj-greenquest.mp4",
+      blurb: "A web service that helps golfers find and plan their golf trips across Småland and Öland.",
+      desc: [
+        "GreenQuest is a web service I developed to simplify how golfers find and plan their golf experiences in Småland and on Öland. The project was based on the task of using SMAPI, an API provided by Linné University, to fetch and present relevant information in a user-friendly way.",
+        "The result was an interactive map showing golf courses in the region, with the ability to filter by rating and distance. During development, focus was on user-centred design — structure, colour choices and features were adapted to golfers' needs and behaviours.",
+        "After feedback from the examiner, the project was further developed by adding supplementary data beyond SMAPI, which gave more detailed and reliable information about each course. GreenQuest became not just a technical project, but a way to learn how to combine functionality, design and data management."
+      ],
+      link: "https://clinquant-centaur-5ea2d3.netlify.app/",
+    },
+    {
+      id: "whimsi",
+      no: "02",
+      title: "WhimsiArtStudios",
+      sub: "Web Tech 1",
+      year: "2024",
+      tag: "E-commerce",
+      stack: ["HTML", "CSS"],
+      color: "#1a1a1a",
+      img: "assets/proj-whimsi.png",
+      video: "assets/proj-whimsi.mp4",
+      blurb: "An e-commerce site for exclusive mousepads — built to grow the brand and reach a global audience online.",
+      desc: [
+        "WhimsiArtStudios is a project where I developed an e-commerce website for a fictional company selling high-quality, artistically designed mousepads. The goal was to create a user-friendly and visually appealing website that serves as the company's primary sales channel, since WhimsiArtStudios has no physical store.",
+        "The website was built with HTML and CSS, with focus on structure, navigation and interactivity. The goal was to create a clear product catalogue and a smooth user flow — from discovering products to adding them to the cart and completing a purchase.",
+        "An important part of the project was establishing a clear brand identity through colour choices, typography and visual language that communicates creativity and quality."
+      ],
+      link: "https://wondrous-pika-0b51ef.netlify.app/",
+    },
+    {
+      id: "mimpi",
+      no: "03",
+      title: "MIMPI",
+      sub: "Digital Graphics 1",
+      year: "2025",
+      tag: "Brand Identity",
+      stack: ["Figma", "Prototyping"],
+      color: "#e87f3a",
+      img: "assets/proj-mimpi.png",
+      video: "assets/proj-mimpi.mp4",
+      blurb: "A brand manual and website for MIMPI — a child-friendly, sustainable brand focused on organic food and clear UX.",
+      desc: [
+        "The project was about creating a graphic profile and website for MIMPI, a fictional company offering child-friendly and organic food products such as frozen meals, smoothies and theme boxes. The goal was to develop a playful, safe and sustainable design that appeals to both children and parents.",
+        "The work began with four iterations of paper prototypes that were tested with users through the Think Aloud method. After each test the design was improved based on feedback, including adding product pages, clearer structure and interactive elements.",
+        "A high-fidelity prototype was then created in Figma with a 12-column grid, considered visual hierarchy and clear colour contrasts. I also developed custom icons, a colour palette, typography and visual language, all documented in the graphic manual."
+      ],
+      link: "https://www.figma.com/proto/SBIcvlu5skvRFPZ0wsj37E/High-fidelity-prototyp---interaktionsdesign-2?node-id=2-10&t=brgnaWO5Pr5lH1pp-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A10",
+    },
+    {
+      id: "spelkoncept",
+      no: "04",
+      title: "Murder Mystery",
+      sub: "Digital Graphics 1",
+      year: "2025",
+      tag: "Game / UX",
+      stack: ["Figma", "CSS"],
+      color: "#d63384",
+      img: "assets/proj-game.png",
+      video: "assets/proj-game.mp4",
+      blurb: "Designed a murder mystery game experience and refreshed the client's visual profile with neon signage and a new highscore screen.",
+      desc: [
+        "In this project we worked in a group of two and received various tasks helping a client develop material, one of which was to create an idea of an interactive game the client could use and then further develop later on.",
+        "The game consists of a static screen and an interactive screen where players cooperate to solve a murder mystery. On the static screen, clues are shown that eliminate suspects. Players remove a suspect per question and then move on to the next clue. If the wrong person is chosen, the team gets minus points and the game pauses for a few seconds to create time pressure.",
+        "The scoring system is not yet implemented in the prototype but will be built in a future coded version. The screens are to be connected so the next clue is shown automatically when the right person is chosen. When only the murderer remains, they are shown behind bars as visual feedback that the game is complete."
+      ],
+      link: "https://www.figma.com/design/8DWOf5OIF1si8sQ28lmWXw/murder-mystery-spel?node-id=51-53311",
+    },
+    { id: "coming1", no: "05", title: "Blender House", sub: "Digital Graphics 2", year: "2025/2026", tag: "3D / Animation", stack: ["Blender", "Modelling", "Shading", "Animation"], color: "#8b6f4e",
+      img: "assets/blender-house.png",
+      video: "assets/blender-video.mp4",
+      blurb: "A fully modelled and rendered house in Blender — every room designed, lit and animated from scratch.",
+      desc: [
+        "Digital Graphics 2 was my favourite course so far. I already had experience in Blender, so this was a chance to push my skills further — modelling, shading, lighting and animation all in one project.",
+        "The project is a complete house with fully detailed rooms: a bedroom, a master bedroom, a bathroom, a kitchen, a living room, a TV room, a dining area and an exterior with a garden and terrace.",
+        "Every material was built using a mix of procedural shaders, add-ons and texture libraries — wood grain, marble countertops, fabric, leather and concrete. The animation is a cinematic walkthrough that moves through each space with carefully placed lights to give each room its own mood."
+      ],
+      gallery: [
+        "assets/blender-house.png",
+        "assets/blender-bedroom.png",
+        "assets/blender-bedroom2.png",
+        "assets/blender-bathroom.png",
+        "assets/blender-kitchen.png",
+        "assets/blender-living.png",
+        "assets/blender-eating.png",
+        "assets/blender-tv.png",
+      ],
+      link: "#",
+    },
+    { id: "coming2", no: "06", title: "House of the Dragon", sub: "Personal Project", year: "2022", tag: "3D / Animation", stack: ["Blender", "Modelling", "Animation"],
+      color: "#7a1a1a",
+      img: "assets/proj-hotd.jpeg",
+      video: "assets/proj-hotd.mp4",
+      blurb: "A fan-made Blender render of a House of the Dragon wine bottle — modelled from reference images and animated to mark season 1.",
+      desc: [
+        "This was a personal project I made in 2022, before I started studying — right when House of the Dragon season 1 came out. I modelled the wine bottle and surrounding props entirely from reference images of the show.",
+        "The scene features a crown, grapes and a sword alongside the bottle, all lit and rendered in Blender to capture the dark, cinematic atmosphere of the series.",
+        "This was an early test of my ability to model from real references, set up a full scene with props, and produce a polished animation render — purely for the love of the craft."
+      ],
+      gallery: [],
+      link: "#",
+    },
+    { id: "coming3", no: "07", title: "Sworn to the Tree", sub: "Project Course 2", year: "2026", tag: "Game Design",
+      stack: ["Rune SDK", "Aseprite", "Spritesheet", "Pixel Art", "2D Animation", "JS"],
+      color: "#2d5a1b",
+      img: "assets/proj-sworntothetree.png",
+      video: "assets/proj-arcadegame.mp4",
+      blurb: "A wave survival + tower defense arcade game built with Rune SDK — I handled all visuals, menus and spritesheets while my partner coded the game logic.",
+      desc: [
+        "Project Course 2 was our most demanding project yet. Working in a two-person team, I took on the role of designer while my partner handled the development and game balancing. My responsibilities covered all the visual design — character sprites, environments, UI, menu screens and the highscore system.",
+        "The game is a hybrid wave survival and tower defense game where the player's main goal is to protect the Mother Tree from waves of enemies while also keeping themselves alive. Players can place defensive structures strategically to hold off incoming attacks — a concept we hadn't seen combined in quite this way before.",
+        "One of the technical challenges was working with Rune SDK, our school's own framework. I had to understand how it handles controller input and how the menu and highscore display works. "
+      ],
+      gallery: [],
+      link: "https://guascer.itch.io/sworn-to-the-tree",
+    },
+    {
+      id: "diabetesnews",
+      no: "08",
+      title: "DiabetesNews",
+      sub: "Personal Project",
+      year: "2026",
+      tag: "Desktop App",
+      stack: ["Electron", "HTML", "CSS", "JS", "News API"],
+      color: "#1a6bbf",
+      img: "assets/proj-diabetesnews.png",
+      video: "assets/proj-diabetesnews.mp4",
+      blurb: "A personal Electron desktop application that fetches the latest Type 1 diabetes research news — built because I wanted to stay updated on what matters most to me.",
+      desc: [
+        "DiabetesNews is a personal project I built to solve a real problem in my own life. As someone living with Type 1 diabetes, I wanted an easy way to follow new research and developments in the field — without having to search for it manually every day.",
+        "The app is built with Electron, which let me package a web-based interface into a real desktop application I could install and run locally. The app fetches the latest news articles about Type 1 diabetes through a News API, always displaying the newest articles at the top and updating automatically.",
+        "A big focus of the project was design — most news sites are cluttered and hard to read. I wanted something clean, calm and actually pleasant to open. The API had some limitations around which articles it could surface, so not every result was perfectly on-topic, but the core functionality — a constantly updating, well-designed news feed for diabetes — worked exactly as intended."
+      ],
+      gallery: [],
+      link: "https://github.com/Guascer/My-electron-app",
+    },
+    {
+      id: "planter",
+      no: "09",
+      title: "The Next Step Planter",
+      sub: "Introduction to Product & UX Design",
+      year: "2026",
+      tag: "Product Design",
+      stack: ["Fusion 360", "Sketching", "Prototyping", "3D Printing"],
+      color: "#a8dadc",
+      img: "planter/img/hero.jpg",
+      imgPosition: "center",
+      blurb: "A self-watering planter designed as a personality self-portrait, from OCEAN research to physical prototype.",
+      desc: [
+        "The brief was to design an object that works as a self-portrait, based on the OCEAN (Big Five) personality model. My dominant trait, Conscientiousness, drives the strict rectilinear geometry, the order of the descending steps and the 'no surprises' functionality.",
+        "From sketches through parametric Fusion 360 modelling to a hand-built foam and 3D-printed prototype, the planter waters itself through sub-irrigation, with a simple floating indicator that shows the water level without any electronics."
+      ],
+      link: "planter/",
+      page: "planter/",
+    },
+  ],
+
+  timeline: [
+    { year: "2024 — now", title: "Interactive Media & Web Technologies", place: "Linnaeus University, Växjö", kind: "Bachelor program" },
+    { year: "2025", title: "Project Course 1 — GreenQuest", place: "Coursework", kind: "Web service" },
+    { year: "2025", title: "Digital Graphics 1 — MIMPI & Neon Arcade", place: "Coursework", kind: "Brand + Game UX" },
+    { year: "2024", title: "Web Tech 1 — Mousepads Co.", place: "Coursework", kind: "E-commerce build" },
+  ],
+
+  process: [
+    { step: "01", name: "Identify", body: "Understand the target audience and their problems. Ask the right questions — not just what users want, but why they struggle. Good design starts with good listening." },
+    { step: "02", name: "Explore", body: "Test many ideas fast through low-fi sketches and iterations. The goal is volume — not polish. Unexpected ideas emerge when you build and discard quickly rather than committing too early." },
+    { step: "03", name: "Build", body: "Translate the best ideas into high-fidelity prototypes. Design decisions from the previous step become real — in Figma first, then in code." },
+    { step: "04", name: "Test & Refine", body: "Run user tests and adjust based on real feedback. The most important measure is whether it's easy for the user to use. Design is never finished until it's been tested by real people." },
+  ],
+
+  socials: [
+    { label: "Linkedin", href: "https://www.linkedin.com/in/oscar-frederiksen-b218503b0/?skipRedirect=true" },
+  ],
+};
+
+window.PORTFOLIO = PORTFOLIO;

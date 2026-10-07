@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>The Next Step Planter — Oscar Frederiksen</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+<style>
+  :root{
+    --bg:#f3eee5;
+    --ink:#1a1612;
+    --accent:#4a7cf7;
+    --c1:#ffb4a2;
+    --c2:#cdb4db;
+    --c3:#a8dadc;
+    --c4:#ffd166;
+    --ph-bg:#ebe4d8;
+    --ph-border:rgba(26,22,18,.25);
+    --muted:rgba(26,22,18,.6);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+  em{font-style:italic;color:var(--accent);font-family:'Fraunces',serif}
+
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-.01em;margin:0}
+
+  /* ---- layout ---- */
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  .section{padding:72px 24px}
+  .section-inner{max-width:1100px;margin:0 auto}
+  .section-label{
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:14px;
+  }
+  .lede{font-size:17px;line-height:1.7;color:var(--ink);opacity:.85;max-width:680px;margin:0 0 32px}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .split .text{padding-top:4px}
+
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .grid-6{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+  /* ---- real media ---- */
+  .media{border-radius:14px;overflow:hidden;display:block;width:100%}
+  .media.lg{border-radius:20px}
+  .media.cover{background:var(--ph-bg)}
+  .media.cover img{width:100%;height:100%;object-fit:cover;display:block}
+  .media.contain{background:#fff;border:1px solid rgba(26,22,18,.08);display:flex;align-items:center;justify-content:center;padding:18px}
+  .media.contain img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+  .media-narrow{max-width:420px;margin:0 auto}
+
+  figure{margin:0}
+  figcaption{
+    margin-top:10px;font-size:13px;color:var(--muted);text-align:center;font-family:'Inter',sans-serif;
+  }
+
+  /* ---- card ---- */
+  .card{
+    background:#fff;border-radius:20px;
+    box-shadow:0 2px 0 rgba(0,0,0,.04),0 8px 24px -8px rgba(0,0,0,.12);
+    padding:28px;
+  }
+
+  /* ---- callout ---- */
+  .callout{
+    background:rgba(74,124,247,.08);border-left:3px solid var(--accent);
+    border-radius:4px 14px 14px 4px;padding:26px 28px;margin:32px 0;
+  }
+  .callout p{margin:0;font-size:15px;line-height:1.75;color:var(--ink)}
+
+  .ref-note{text-align:center;font-size:13px;color:var(--muted);font-style:italic;margin-top:18px}
+
+  /* ---- top bar ---- */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 24px;max-width:1100px;margin:0 auto;
+  }
+  .back-link{
+    font-size:14px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:6px;
+    color:var(--ink);opacity:.75;transition:opacity .2s;
+  }
+  .back-link:hover{opacity:1}
+  .topbar .name{font-family:'JetBrains Mono',monospace;font-size:13px;opacity:.6;letter-spacing:.04em}
+
+  /* ---- hero ---- */
+  .hero{padding:12px 24px 72px}
+  .hero-inner{max-width:1100px;margin:0 auto}
+  .hero-flex{display:flex;flex-direction:column;gap:32px}
+  .hero-media{width:100%}
+  .hero .hero-media img{width:100%;height:auto;max-height:80vh;max-width:none;object-fit:contain;display:block;margin:0 auto}
+  .hero-text{width:100%}
+  @media (min-width:861px){
+    .hero-flex{flex-direction:row;align-items:center;gap:48px}
+    .hero-media{flex:0 0 55%;max-width:55%}
+    .hero-text{flex:0 0 45%;max-width:45%}
+  }
+  .hero h1{font-size:56px;line-height:1.05;margin-bottom:16px}
+  .hero .subtitle{font-size:19px;line-height:1.6;opacity:.8;max-width:600px;margin-bottom:20px}
+  .meta-row{
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.04em;color:var(--muted);
+    display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  }
+
+  /* ---- scenario steps ---- */
+  .scenario-step{display:flex;flex-direction:column;gap:12px}
+  .scenario-step .media{aspect-ratio:1/1}
+  .step-num{
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:.1em;
+  }
+
+  /* ---- CMF swatches ---- */
+  .cmf-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .cmf-row .ph{aspect-ratio:1/1}
+
+  /* ---- alt section bg bands ---- */
+  .band{background:#ffffff66}
+
+  /* ---- fade in on scroll ---- */
+  .fade-in{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .fade-in.in-view{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .fade-in{opacity:1!important;transform:none!important;transition:none!important}
+  }
+
+  /* ---- footer ---- */
+  .footer{
+    padding:56px 24px 72px;text-align:center;border-top:1px solid rgba(26,22,18,.1);margin-top:40px;
+  }
+  .footer .back-link{font-size:15px;justify-content:center}
+  .footer .credit{margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:12px;opacity:.45}
+
+  /* ---- responsive ---- */
+  @media (max-width:860px){
+    .split{grid-template-columns:1fr;gap:28px}
+    .grid-6{grid-template-columns:repeat(2,1fr)}
+    .hero h1{font-size:42px}
+  }
+  @media (max-width:600px){
+    .section{padding:52px 20px}
+    .hero{padding:8px 20px 52px}
+    .hero h1{font-size:32px}
+    .hero .subtitle{font-size:16px}
+    .grid-2,.grid-3,.cmf-row{grid-template-columns:1fr}
+    .grid-4{grid-template-columns:repeat(2,1fr)}
+    .grid-6{grid-template-columns:1fr}
+    .topbar{flex-wrap:wrap;gap:10px}
+  }
+  @media (max-width:375px){
+    .hero h1{font-size:28px}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="back-link" href="../Portfolio.html#work">← Back to portfolio</a>
+  <span class="name">Oscar Frederiksen</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-flex fade-in">
+      <div class="media contain hero-media">
+        <img src="img/hero.jpg" alt="The primed Next Step Planter body from above, showing the round pot seat with its indicator guide markings and the indicator slot with its painted face" loading="eager"/>
+      </div>
+      <div class="hero-text">
+        <h1>The <em>Next Step</em> Planter</h1>
+        <p class="subtitle">A self-watering planter designed as a personality self-portrait.</p>
+        <div class="meta-row">
+          <span>Introduction to Product &amp; UX Design</span>
+          <span>·</span>
+          <span>Griffith University</span>
+          <span>·</span>
+          <span>2026</span>
+          <span>·</span>
+          <span>220 × 110 × 100 mm</span>
+          <span>·</span>
+          <span>Foam, PLA, timber</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE BRIEF -->
+<section class="section">
+  <div class="section-inner split fade-in">
+    <div class="text">
+      <div class="section-label">The brief</div>
+      <h2 style="font-size:28px;margin-bottom:16px">A self-portrait, coded not guessed</h2>
+      <p class="lede" style="margin-bottom:0">The brief was to design a product as a self-portrait, using the OCEAN personality model. I coded a written account of a turning point in my own life into 22 personality codes. <em>Conscientiousness</em> came out far ahead — 20 mentions, against 13 each for Openness and Neuroticism and 9 each for Extraversion and Agreeableness — and that is the measured reason the body is rectilinear and stepped rather than a matter of taste.</p>
+    </div>
+    <figure>
+      <div class="media contain" style="aspect-ratio:1358/1300">
+        <img src="img/brief-ocean-chart.jpg" alt="Bar chart showing code frequency across the five OCEAN themes: Conscientiousness 20, Openness 13, Neuroticism 13, Extraversion 9, Agreeableness 9" loading="lazy"/>
+      </div>
+      <figcaption>Code frequency across the five OCEAN themes.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- USER TESTING -->
+<section class="section band">
+  <div class="section-inner fade-in">
+    <div class="section-label">User testing</div>
+    <h2 style="font-size:28px;margin-bottom:16px">What the numbers actually showed</h2>
+    <p class="lede">Three questions in a 5-point Likert survey asked whether the form, colour and material semantics matched the intended personality. 34 people answered. Colour landed clearly (91.2% agreed), form read as calm but not distinctly personal (61.8%), and material and finish was the weakest and most divided (52.9%).</p>
+
+    <figure style="margin-bottom:28px">
+      <div class="media contain" style="aspect-ratio:2000/687">
+        <img src="img/research-survey.jpg" alt="Screenshot of the online Likert survey asking whether the planter's form semantics reflect the intended personality traits" loading="lazy"/>
+      </div>
+      <figcaption>The survey instrument.</figcaption>
+    </figure>
+
+    <div class="grid-3" style="margin-bottom:28px">
+      <figure>
+        <div class="media contain" style="aspect-ratio:4/3">
+          <img src="img/research-q1-form.png" alt="Bar chart of survey responses to Q1 on form semantics, 61.8% agreed" loading="lazy"/>
+        </div>
+        <figcaption>Q1 Form · 61.8% agreed</figcaption>
+      </figure>
+      <figure>
+        <div class="media contain" style="aspect-ratio:4/3">
+          <img src="img/research-q2-colour.png" alt="Bar chart of survey responses to Q2 on colour semantics, 91.2% agreed" loading="lazy"/>
+        </div>
+        <figcaption>Q2 Colour · 91.2% agreed</figcaption>
+      </figure>
+      <figure>
+        <div class="media contain" style="aspect-ratio:4/3">
+          <img src="img/research-q3-material.png" alt="Bar chart of survey responses to Q3 on material and finish semantics, 52.9% agreed" loading="lazy"/>
+        </div>
+        <figcaption>Q3 Material &amp; Finish · 52.9% agreed</figcaption>
+      </figure>
+    </div>
+
+    <div class="grid-2">
+      <div class="media contain" style="aspect-ratio:5/3">
+        <img src="img/research-spss.jpg" alt="SPSS descriptive statistics table for the three survey questions" loading="lazy"/>
+      </div>
+      <div class="media contain" style="aspect-ratio:4/3">
+        <img src="img/research-ttest.jpg" alt="SPSS one-sample t-test output for Q1 and Q3" loading="lazy"/>
+      </div>
+    </div>
+    <figcaption>SPSS descriptives and one-sample t-test. Only Q1 and Q3 had a standard deviation above 0.80, so only they were t-tested.</figcaption>
+  </div>
+</section>
+
+<!-- CONTEXTUAL RESEARCH -->
+<section class="section">
+  <div class="section-inner fade-in">
+    <div class="section-label">Contextual research</div>
+    <h2 style="font-size:28px;margin-bottom:16px">Studied for mechanism, rejected on form</h2>
+    <p class="lede">I studied existing self-watering planters for the mechanism, and deliberately rejected them on form. Every reference is round and ribbed; the personality data pointed the other way.</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="media contain" style="aspect-ratio:4/3">
+          <img src="img/reference-01-indicator-pot.jpg" alt="Existing self-watering planter with a round ribbed body and a floating rod water-level indicator" loading="lazy"/>
+        </div>
+        <figcaption style="margin-top:14px">Floating rod indicator. Confirmed a purely mechanical readout works, and that it needs its own vertical shaft.</figcaption>
+      </div>
+      <div class="card">
+        <div class="media contain" style="aspect-ratio:4/3">
+          <img src="img/reference-02-split-pot.jpg" alt="Existing self-watering planter shown split into an outer reservoir and a perforated inner pot" loading="lazy"/>
+        </div>
+        <figcaption style="margin-top:14px">Outer reservoir and perforated inner pot. Gave me the part breakdown: body, inner pot, indicator.</figcaption>
+      </div>
+      <div class="card">
+        <div class="media contain" style="aspect-ratio:4/3">
+          <img src="img/reference-03-ribbed-base.jpg" alt="Close-up of raised ribs moulded under the inner pot of an existing self-watering planter" loading="lazy"/>
+        </div>
+        <figcaption style="margin-top:14px">Raised ribs under the inner pot. The detail that later solved the water path in the physical build.</figcaption>
+      </div>
+    </div>
+    <p class="ref-note">Reference images from existing designs, used for research.</p>
+  </div>
+</section>
+
+<!-- SKETCHES AND FORM EXPLORATION -->
+<section class="section band">
+  <div class="section-inner fade-in">
+    <div class="section-label">Sketches &amp; form exploration</div>
+    <h2 style="font-size:28px;margin-bottom:16px">Sketch and form exploration</h2>
+    <p class="lede">The first sketch already had the steps, the soil opening and a small face on the indicator. I then blocked the form out quickly in Blender before building it properly.</p>
+
+    <figure class="media-narrow" style="margin-bottom:28px">
+      <div class="media contain" style="aspect-ratio:3/4">
+        <img src="img/sketch-01-hand.jpg" alt="First hand-drawn pencil sketch of the stepped planter, with the soil opening and a smiling face on the indicator" loading="lazy"/>
+      </div>
+      <figcaption>First hand sketch.</figcaption>
+    </figure>
+
+    <div class="grid-3" style="margin-bottom:12px">
+      <div class="media contain" style="aspect-ratio:3/2">
+        <img src="img/form-01-blender.jpg" alt="Quick blocked-out form of the planter body in Blender, perspective view" loading="lazy"/>
+      </div>
+      <div class="media contain" style="aspect-ratio:3/2">
+        <img src="img/form-02-blender.jpg" alt="Quick blocked-out form of the planter body in Blender, alternate angle" loading="lazy"/>
+      </div>
+      <div class="media contain" style="aspect-ratio:3/2">
+        <img src="img/form-03-blender.jpg" alt="Quick blocked-out form of the planter body in Blender, close detail of the stepped corner" loading="lazy"/>
+      </div>
+    </div>
+    <figcaption>Quick form test in Blender.</figcaption>
+  </div>
+</section>
+
+<!-- TECHNICAL DRAWINGS -->
+<section class="section">
+  <div class="section-inner fade-in">
+    <div class="section-label">Technical drawings</div>
+    <h2 style="font-size:28px;margin-bottom:16px">Drawn at full size, on purpose</h2>
+    <p class="lede">Three 1:1 sheets printed on A3 and laid straight under the foam block, so the outline could be transferred at full size without measuring errors.</p>
+
+    <div class="grid-3" style="margin-bottom:28px">
+      <figure>
+        <div class="media contain" style="aspect-ratio:3/4">
+          <img src="img/drawing-01-third-angle.jpg" alt="Third-angle projection drawing, top view, of the planter body with dimensions" loading="lazy"/>
+        </div>
+        <figcaption>Sheet 1/3, top view. 220 × 110 mm, pot seat Ø 93.9 mm, 14 mm indicator shaft.</figcaption>
+      </figure>
+      <figure>
+        <div class="media contain" style="aspect-ratio:3/4">
+          <img src="img/drawing-02.jpg" alt="Third-angle projection drawing, end view, of the planter body with dimensions" loading="lazy"/>
+        </div>
+        <figcaption>Sheet 2/3, end view. Body height 100 mm.</figcaption>
+      </figure>
+      <figure>
+        <div class="media contain" style="aspect-ratio:3/4">
+          <img src="img/drawing-03.jpg" alt="Third-angle projection drawing, side view, of the planter body with step dimensions" loading="lazy"/>
+        </div>
+        <figcaption>Sheet 3/3, side view. Step rises of 24 and 48 mm.</figcaption>
+      </figure>
+    </div>
+
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px">Assembly sequence</div>
+    <div class="grid-4" style="margin-bottom:28px">
+      <figure>
+        <div class="media cover" style="aspect-ratio:1/1">
+          <img src="img/scenario-01-reservoir.jpg" alt="Empty planter body showing the reservoir and indicator shaft" loading="lazy"/>
+        </div>
+        <figcaption>1 · Empty body with reservoir and indicator shaft</figcaption>
+      </figure>
+      <figure>
+        <div class="media cover" style="aspect-ratio:1/1">
+          <img src="img/scenario-02-pins.jpg" alt="Four timber pins laid into the pot seat" loading="lazy"/>
+        </div>
+        <figcaption>2 · Four timber pins laid in the seat</figcaption>
+      </figure>
+      <figure>
+        <div class="media cover" style="aspect-ratio:1/1">
+          <img src="img/scenario-03-inner-pot.jpg" alt="Inner pot lowered onto the timber pins" loading="lazy"/>
+        </div>
+        <figcaption>3 · Inner pot lowered onto the pins</figcaption>
+      </figure>
+      <figure>
+        <div class="media cover" style="aspect-ratio:1/1">
+          <img src="img/scenario-04-indicator.jpg" alt="Indicator dropped into its shaft" loading="lazy"/>
+        </div>
+        <figcaption>4 · Indicator dropped into the shaft</figcaption>
+      </figure>
+    </div>
+
+    <div class="split">
+      <figure>
+        <div class="media contain" style="aspect-ratio:1/1">
+          <img src="img/drawing-04-inner-pot-revised.jpg" alt="Revised technical drawing of the inner pot, redimensioned to match the physical foam seat" loading="lazy"/>
+        </div>
+        <figcaption>Revised inner pot.</figcaption>
+      </figure>
+      <div class="text">
+        <p class="lede" style="margin-bottom:0">The foam seat came out smaller and slightly out of round, so I measured the real opening and revised the inner pot to match: top Ø 83.25 mm, height 73.98 mm. The physical part became the source of truth and the CAD followed it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIGITAL PROTOTYPE -->
+<section class="section band">
+  <div class="section-inner fade-in">
+    <div class="section-label">Digital prototype</div>
+    <h2 style="font-size:28px;margin-bottom:16px">Three parts, modelled separately</h2>
+    <p class="lede">Modelled parametrically in Autodesk Fusion as separate parts: body, inner pot and indicator.</p>
+
+    <div class="grid-3" style="margin-bottom:28px;row-gap:32px">
+      <figure>
+        <div class="media contain" style="aspect-ratio:8/5">
+          <img src="img/fusion-01-sketch.jpg" alt="Fusion 360 fully constrained sketch of the stair profile" loading="lazy"/>
+        </div>
+        <figcaption>Fully constrained stair profile, so the whole stair resizes from one parameter.</figcaption>
+      </figure>
+      <figure>
+        <div class="media contain" style="aspect-ratio:8/5">
+          <img src="img/fusion-02-steps.jpg" alt="Fusion 360 model of the steps extruded with internal volumes cut from the top face" loading="lazy"/>
+        </div>
+        <figcaption>Steps extruded and the internal volumes cut down from the top face.</figcaption>
+      </figure>
+      <figure>
+        <div class="media contain" style="aspect-ratio:8/5">
+          <img src="img/fusion-03-soil-opening.jpg" alt="Fusion 360 model showing the round seat cut for the inner pot" loading="lazy"/>
+        </div>
+        <figcaption>Round seat for the inner pot.</figcaption>
+      </figure>
+      <figure>
+        <div class="media contain" style="aspect-ratio:8/5">
+          <img src="img/fusion-04-body.jpg" alt="Fusion 360 model of the body showing the opening between reservoir and seat and the indicator shaft" loading="lazy"/>
+        </div>
+        <figcaption>Opening between reservoir and seat, plus the 14 × 14 mm indicator shaft.</figcaption>
+      </figure>
+      <figure>
+        <div class="media contain" style="aspect-ratio:8/5">
+          <img src="img/fusion-05-inner-pot.jpg" alt="Fusion 360 T-spline form model of the inner pot" loading="lazy"/>
+        </div>
+        <figcaption>Inner pot as a T-spline form, so top and bottom diameters could change independently.</figcaption>
+      </figure>
+      <figure>
+        <div class="media contain" style="aspect-ratio:8/5">
+          <img src="img/fusion-06-inner-pot-base.jpg" alt="Fusion 360 model of the inner pot base showing patterned holes and side slots" loading="lazy"/>
+        </div>
+        <figcaption>Base holes and side slots patterned on path.</figcaption>
+      </figure>
+      <figure>
+        <div class="media contain" style="aspect-ratio:8/5">
+          <img src="img/fusion-07-indicator.jpg" alt="Fusion 360 model of the indicator head with a simple face detail" loading="lazy"/>
+        </div>
+        <figcaption>Indicator head with a face: the plant looks happy when it has water.</figcaption>
+      </figure>
+    </div>
+
+    <div class="card">
+      <div class="section-label" style="margin-bottom:16px">Colour &amp; material</div>
+      <div class="grid-2">
+        <figure>
+          <div class="media contain" style="aspect-ratio:16/9">
+            <img src="img/cmf-render-grey.jpg" alt="Render of the planter in plain grey, with colour removed, as a form study" loading="lazy"/>
+          </div>
+          <figcaption>Form study, colour removed.</figcaption>
+        </figure>
+        <figure>
+          <div class="media contain" style="aspect-ratio:16/9">
+            <img src="img/cmf-render-colour.jpg" alt="Full colour render of the planter: deep blue body, stone-grey cover and a muted rose indicator accent" loading="lazy"/>
+          </div>
+          <figcaption>Full CMF proposal: deep blue body, stone-like grey cover, one muted rose accent.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="section-inner fade-in">
+    <div class="section-label">How it works</div>
+    <h2 style="font-size:28px;margin-bottom:16px">No electronics, no batteries</h2>
+
+    <div class="grid-4" style="margin-bottom:28px">
+      <div class="scenario-step card">
+        <div class="step-num mono">01</div>
+        <h3 style="font-size:18px;margin:8px 0 6px">Fill the reservoir</h3>
+        <p style="font-size:13px;line-height:1.6;color:var(--muted);margin:0">Water goes in around the inner pot, not onto the soil directly.</p>
+      </div>
+      <div class="scenario-step card">
+        <div class="step-num mono">02</div>
+        <h3 style="font-size:18px;margin:8px 0 6px">Seat the inner pot</h3>
+        <p style="font-size:13px;line-height:1.6;color:var(--muted);margin:0">Four timber pins hold it 3 mm clear of the reservoir floor.</p>
+      </div>
+      <div class="scenario-step card">
+        <div class="step-num mono">03</div>
+        <h3 style="font-size:18px;margin:8px 0 6px">Water reaches the roots</h3>
+        <p style="font-size:13px;line-height:1.6;color:var(--muted);margin:0">Perforations in the inner pot base let it wick up into the soil.</p>
+      </div>
+      <div class="scenario-step card">
+        <div class="step-num mono">04</div>
+        <h3 style="font-size:18px;margin:8px 0 6px">Watch the indicator</h3>
+        <p style="font-size:13px;line-height:1.6;color:var(--muted);margin:0">A foam float rises when full and sinks when empty.</p>
+      </div>
+    </div>
+
+    <p class="lede" style="margin-bottom:0">No electronics, no batteries. Archimedes keeps the indicator floating, sub-irrigation lets the soil draw only the water it needs. The state is visible without being read: head up means full, head down means empty.</p>
+  </div>
+</section>
+
+<!-- PHYSICAL PROTOTYPE -->
+<section class="section band">
+  <div class="section-inner fade-in">
+    <div class="section-label">Physical prototype</div>
+    <h2 style="font-size:28px;margin-bottom:16px">Six pieces of foam, one hand-mixed grey</h2>
+    <p class="lede">Built from six laminated pieces of high density foam, shaped by hot wire and spindle sander, glued with PVA and held with tape because foam crushes under clamps. The workshop only had white and black paint, so the grey was mixed by hand.</p>
+
+    <div class="grid-6" style="margin-bottom:28px">
+      <figure>
+        <div class="media cover" style="aspect-ratio:4/3">
+          <img src="img/build-01-block-on-drawing.jpg" alt="Laminated foam block laid out on the printed 1:1 technical drawing" loading="lazy"/>
+        </div>
+        <figcaption>Foam laid out on the 1:1 drawing.</figcaption>
+      </figure>
+      <figure>
+        <div class="media cover" style="aspect-ratio:4/3">
+          <img src="img/build-02-spindle-sander.jpg" alt="Foam block being shaped on a spindle sander" loading="lazy"/>
+        </div>
+        <figcaption>Shaping the pot seat on the spindle sander.</figcaption>
+      </figure>
+      <figure>
+        <div class="media cover" style="aspect-ratio:4/3">
+          <img src="img/build-03-glue-and-tape.jpg" alt="Foam pieces glued together and held with tape while curing" loading="lazy"/>
+        </div>
+        <figcaption>Glued and taped while curing.</figcaption>
+      </figure>
+      <figure>
+        <div class="media cover" style="aspect-ratio:4/3">
+          <img src="img/build-04-primed-body.jpg" alt="Primed foam body of the planter with the indicator shaft visible" loading="lazy"/>
+        </div>
+        <figcaption>Primed body with the indicator shaft.</figcaption>
+      </figure>
+      <figure>
+        <div class="media cover" style="aspect-ratio:4/3">
+          <img src="img/build-05-3d-printed-pot.jpg" alt="3D printed inner pot held in hand, showing the perforated base holes" loading="lazy"/>
+        </div>
+        <figcaption>3D printed inner pot with base holes.</figcaption>
+      </figure>
+      <figure>
+        <div class="media cover" style="aspect-ratio:4/3">
+          <img src="img/build-06-indicator.jpg" alt="Foam indicator piece cut to a constant rectangular section, with a painted smiling face" loading="lazy"/>
+        </div>
+        <figcaption>Foam indicator, cut to a constant 50 × 7 mm section.</figcaption>
+      </figure>
+    </div>
+
+    <div class="callout">
+      <p>Building found what modelling hid. In Fusion the base holes looked finished, because a model has no contact and no gravity. Only with the printed pot in my hand was it obvious they opened onto a solid floor. Four timber pins fixed it.</p>
+    </div>
+
+    <figure style="margin-bottom:28px">
+      <div class="media lg contain" style="aspect-ratio:3/4;max-width:640px;margin:0 auto">
+        <img src="img/final-01.jpg" alt="The primed planter body from above, showing the empty round pot seat and the indicator shaft slot with a wooden peg inside" loading="lazy"/>
+      </div>
+      <figcaption>Painted foam, printed PLA and bare timber: three materials nobody can mistake for each other, which answers the weak material score from testing.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="media cover" style="aspect-ratio:4/3">
+        <img src="img/display-board.jpg" alt="Physical display board summarising the project for the Week 11 presentation" loading="lazy"/>
+      </div>
+      <figcaption>Display board for the Week 11 presentation.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- FINAL DESIGN & REFLECTION -->
+<section class="section">
+  <div class="section-inner fade-in">
+    <div class="section-label">Final design &amp; reflection</div>
+    <div class="media lg cover" style="aspect-ratio:16/9;margin-bottom:28px">
+      <img src="img/final-02.jpg" alt="The finished Next Step Planter prototype, grey stepped body with its water-level indicator" loading="lazy"/>
+    </div>
+    <p class="lede">This is an appearance and mechanism prototype. Foam proves the geometry at full size (reservoir volume, clearance under the pot, indicator travel) but it is porous and cannot hold water. Rebuilding the same geometry in a printed or moulded polymer body is the one step between this object and a working planter.</p>
+    <p class="lede" style="opacity:.65;margin-bottom:0">What I take with me: treat the digital model as a proposal that the physical build tests, not as the finished answer.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <a class="back-link" href="../Portfolio.html#work">← Back to portfolio</a>
+  <div class="credit">Oscar Frederiksen · The Next Step Planter · 2026</div>
+</footer>
+
+<script>
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".fade-in").forEach(function(el){ observer.observe(el); });
+  } else {
+    document.querySelectorAll(".fade-in").forEach(function(el){ el.classList.add("in-view"); });
+  }
+</script>
+
+</body>
+</html>

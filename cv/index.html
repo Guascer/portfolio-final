@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Oscar Frederiksen — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:     #f3eee5;
+    --ink:    #1a1612;
+    --accent: #4a7cf7;
+    --muted:  rgba(26,22,18,.5);
+    --border: rgba(26,22,18,.1);
+    --white:  #ffffff;
+    --col-l:  240px;
+    --pad:    32px;
+  }
+
+  html { background: #d4cfc6; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--bg);
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: var(--col-l) 1fr;
+    box-shadow: 0 4px 40px rgba(0,0,0,.15);
+  }
+
+  /* ── LEFT COLUMN ────────────────────────── */
+  .col-left {
+    background: var(--ink);
+    color: #fff;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .photo-wrap {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent);
+    margin: 0 auto;
+    flex-shrink: 0;
+  }
+  .photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 52% 12%;
+    display: block;
+    transform: scale(1.6);
+    transform-origin: 52% 12%;
+  }
+
+  .left-section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    opacity: .88;
+  }
+  .contact-list .icon {
+    width: 14px;
+    flex-shrink: 0;
+    opacity: .6;
+    margin-top: 1px;
+  }
+  .contact-list a {
+    color: #fff;
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  .pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.22);
+    font-size: 10px;
+    letter-spacing: .03em;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+  .pill.accent { border-color: var(--accent); color: var(--accent); }
+
+  .lang-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .lang-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .lang-name { font-size: 11px; font-weight: 500; }
+  .lang-level { font-size: 10px; opacity: .55; }
+  .lang-bar { height: 3px; background: rgba(255,255,255,.15); border-radius: 2px; margin-top: 3px; }
+  .lang-bar-fill { height: 100%; border-radius: 2px; background: var(--accent); }
+
+  /* ── RIGHT COLUMN ───────────────────────── */
+  .col-right {
+    padding: 24px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .name-block { border-bottom: 1.5px solid var(--border); padding-bottom: 12px; }
+  .name-block h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: -.02em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .name-block h1 em { font-style: italic; color: var(--accent); }
+  .name-block .role {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .section-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .about-text {
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--ink);
+    opacity: .9;
+  }
+
+  /* Experience */
+  .exp-list { display: flex; flex-direction: column; gap: 10px; }
+  .exp-item {}
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 2px;
+  }
+  .exp-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -.01em;
+  }
+  .exp-date {
+    font-size: 10px;
+    font-family: ui-monospace, monospace;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .exp-company {
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+  .exp-desc {
+    font-size: 11px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  /* Education */
+  .edu-item { margin-bottom: 6px; }
+  .edu-degree {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    margin-bottom: 2px;
+  }
+  .edu-school { font-size: 11px; color: var(--accent); font-weight: 500; margin-bottom: 2px; }
+  .edu-date { font-size: 10px; font-family: ui-monospace, monospace; color: var(--muted); }
+
+  /* Projects */
+  .proj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .proj-item {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+  }
+  .proj-title {
+    font-family: 'Fraunces', serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 2px;
+  }
+  .proj-tag {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 3px;
+  }
+  .proj-desc { font-size: 10px; line-height: 1.5; color: var(--muted); }
+
+  /* Footer */
+  .cv-footer {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    font-size: 9.5px;
+    color: var(--muted);
+    font-family: ui-monospace, monospace;
+  }
+
+  /* ── PRINT ──────────────────────────────── */
+  @media print {
+    html { background: transparent; }
+    .page { margin: 0; box-shadow: none; width: 100%; min-height: 100vh; }
+    body { font-size: 10.5px; line-height: 1.4; }
+    .col-left { padding: 14px 18px; gap: 10px; }
+    .col-right { padding: 14px 18px; gap: 6px; }
+    .photo-wrap { width: 95px; height: 95px; }
+    .name-block { padding-bottom: 5px; }
+    .name-block h1 { font-size: 24px; }
+    .section-label { margin-bottom: 4px; }
+    .about-text { line-height: 1.3; }
+    .exp-list { gap: 4px; }
+    .edu-item { margin-bottom: 2px; }
+    .contact-list { gap: 3px; }
+    .lang-list { gap: 3px; }
+    .portfolio-card { padding: 8px 16px !important; }
+    .cv-footer { padding-top: 6px; }
+    @page { size: A4; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- LEFT COLUMN -->
+  <aside class="col-left">
+
+    <!-- Photo -->
+    <div class="photo-wrap">
+      <img src="../assets/portrait.jpeg" alt="Oscar Frederiksen"/>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <div class="left-section-label">Contact</div>
+      <ul class="contact-list">
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Stallvägen 50 B<br/>Växjö, Sweden</span>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>076 822 83 05</span>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          <span>Private: <a href="mailto:oscarfrederiksen3@icloud.com">oscarfrederiksen3@icloud.com</a></span>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          <span>School: <a href="mailto:of222ha@student.lnu.se">of222ha@student.lnu.se</a></span>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M16 2v4M8 2v4M2 10h20"/></svg>
+          <span>Born 12 May 2001</span>
+        </li>
+        <li>
+      </ul>
+    </div>
+
+    <!-- Skills -->
+    <div>
+      <div class="left-section-label">Focus</div>
+      <div class="pill-list">
+        <span class="pill accent">HTML / CSS / JS</span>
+        <span class="pill accent">Three.js</span>
+        <span class="pill accent">Interaction Design</span>
+        <span class="pill accent">UI / UX</span>
+        <span class="pill accent">3D Development</span>
+        <span class="pill accent">Emerging AI Tech</span>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div>
+      <div class="left-section-label">Tools</div>
+      <div class="pill-list">
+        <span class="pill">Figma</span>
+        <span class="pill">Blender</span>
+        <span class="pill">VS Code</span>
+        <span class="pill">Git</span>
+        <span class="pill">Photoshop</span>
+        <span class="pill">Illustrator</span>
+        <span class="pill">Premiere</span>
+        <span class="pill">Aseprite</span>
+        <span class="pill">Three.js</span>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div>
+      <div class="left-section-label">Languages</div>
+      <ul class="lang-list">
+        <li>
+          <div class="lang-name">Swedish</div>
+          <div class="lang-level">Native</div>
+          <div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div>
+        </li>
+        <li>
+          <div class="lang-name">English</div>
+          <div class="lang-level">Fluent</div>
+          <div class="lang-bar"><div class="lang-bar-fill" style="width:97%"></div></div>
+        </li>
+        <li>
+          <div class="lang-name">Danish</div>
+          <div class="lang-level">Good</div>
+          <div class="lang-bar"><div class="lang-bar-fill" style="width:65%"></div></div>
+        </li>
+        <li>
+          <div class="lang-name">Norwegian</div>
+          <div class="lang-level">Good</div>
+          <div class="lang-bar"><div class="lang-bar-fill" style="width:62%"></div></div>
+        </li>
+      </ul>
+    </div>
+
+  </aside>
+
+  <!-- RIGHT COLUMN -->
+  <main class="col-right">
+
+    <!-- Name -->
+    <div class="name-block">
+      <h1>Oscar <em>Frederiksen</em></h1>
+      <div class="role">Interactive Media &amp; Web Technologies · Seeking LIA Internship 2026</div>
+    </div>
+
+    <!-- About -->
+    <div>
+      <div class="section-label">About</div>
+      <p class="about-text">
+        I'm a driven and passionate student at Linnaeus University in Växjö, studying Interactive Media and Web Technologies. I combine design and code — from Figma prototype to finished, responsive product. 3D is where I feel most at home: I model, shade and animate in Blender, and bring those skills into the web through Three.js.<br/><br/>
+        I'm deeply passionate about new technology, especially the rapid development of AI and the possibilities it opens up for designers and developers. I actively follow the AI space and believe that embracing these tools is key to working smarter, building better products and staying ahead in a fast-moving field. I'm a quick learner who thrives when exploring new ideas — and I'm always looking for ways to push what's possible.
+      </p>
+    </div>
+
+    <!-- Experience -->
+    <div>
+      <div class="section-label">Experience</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-title">Store Employee</div>
+            <div class="exp-date">Nov 2020 — Summer 2024</div>
+          </div>
+          <div class="exp-company">ICA Malmborgs Erikslust · Malmö</div>
+          <div class="exp-desc">Grocery, frozen foods, dairy &amp; meat departments. Customer-facing role in a high-traffic store. Strong communication and teamwork in a fast-paced environment.</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-title">AI Art &amp; E-commerce</div>
+            <div class="exp-date">2023 — 2024</div>
+          </div>
+          <div class="exp-company">Self-employed · Etsy</div>
+          <div class="exp-desc">Early adopter of AI image generation — created custom AI-generated artwork and applied it to mousepads and merchandise, which I sold through my own Etsy store. Combined prompt engineering, product design and e-commerce independently.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-title">Garbage Bin Washing</div>
+            <div class="exp-date">Summer (own business)</div>
+          </div>
+          <div class="exp-company">Self-employed</div>
+          <div class="exp-desc">Ran my own summer job — planned, marketed and executed independently.</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-title">Internship — Kindergarten</div>
+            <div class="exp-date">During school</div>
+          </div>
+          <div class="exp-company">School placement</div>
+          <div class="exp-desc">Working with children in a kindergarten environment.</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-title">Internship — Leos Lekland</div>
+            <div class="exp-date">During school</div>
+          </div>
+          <div class="exp-company">Leos Lekland (children's play centre)</div>
+          <div class="exp-desc">Customer service and supervision at a children's play centre.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div>
+      <div class="section-label">Education</div>
+      <div class="edu-item">
+        <div class="edu-degree">Interactive Media &amp; Web Technologies</div>
+        <div class="edu-school">Linnaeus University · Växjö</div>
+        <div class="edu-date">2024 — Present · Bachelor program</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Social Science</div>
+        <div class="edu-school">Bladins Gymnasium · Malmö</div>
+        <div class="edu-date">2017 — 2020</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Highschool class 6–9</div>
+        <div class="edu-school">Sveskolan · Malmö</div>
+        <div class="edu-date">2013 — 2017</div>
+      </div>
+    </div>
+
+    <!-- Awards -->
+    <div>
+      <div class="section-label">Awards</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-title">Swedish Champion — Gymnastics</div>
+            <div class="exp-date">2014</div>
+          </div>
+          <div class="exp-desc">Swedish national champion in gymnastics at age 13.</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-title">Best Progress Award</div>
+            <div class="exp-date">2018</div>
+          </div>
+          <div class="exp-company">Bladins Gymnasium · Malmö</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Merits -->
+    <div>
+      <div class="section-label">Merits</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <span style="font-size:10px;border:1px solid var(--accent);color:var(--accent);padding:3px 9px;border-radius:999px;letter-spacing:.04em">Driving licence (manual &amp; automatic)</span>
+      </div>
+    </div>
+
+    <!-- Portfolio link -->
+    <div>
+      <div class="section-label">Portfolio</div>
+      <div class="portfolio-card" style="background:#fff;border-radius:14px;border:1px solid var(--border);padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+        <div>
+          <div style="font-family:'Fraunces',serif;font-size:16px;font-weight:400;letter-spacing:-.01em;margin-bottom:4px">
+            Oscar Frederiksen — Portfolio
+          </div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.5">
+            7 projects including web services, brand systems, 3D animation and game design.<br/>
+            Case studies, videos and live demos available at the link below.
+          </div>
+        </div>
+        <a href="https://merry-squirrel-1cd725.netlify.app/portfolio" target="_blank"
+           style="flex-shrink:0;display:inline-flex;align-items:center;gap:6px;
+                  padding:10px 16px;background:var(--accent);color:#fff;
+                  border-radius:999px;font-size:11px;font-weight:500;
+                  text-decoration:none;letter-spacing:.02em;white-space:nowrap">
+          View portfolio ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="cv-footer">
+      <span>Oscar Frederiksen · CV · 2026</span>
+      <span>References available on request</span>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
